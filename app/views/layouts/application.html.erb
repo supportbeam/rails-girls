@@ -3,7 +3,7 @@
   <head>
     <title>Railsgirls</title>
     <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
-    <link rel="stylesheet" href="htpp://railsgirls.com/assets/bootstrap-theme.css">
+    <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap-theme.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -22,12 +22,12 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/ideas">Ideas</a></li>
+            <li class=""><a href="/ideas">Ideas</a></li>
             <li><%= link_to 'New Idea', new_idea_path %></li>
           </ul>
           <p class="navbar-text pull-right">
             <% if user_signed_in? %>
-            <%= image_tag current_user.gravatar_url %>
+            <%= image_tag current_user.gravatar_url, :class => 'gravatar'%>
             Logged in as <strong><%= current_user.email %></strong>.
             <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
